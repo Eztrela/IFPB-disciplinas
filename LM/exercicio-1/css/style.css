@@ -1,0 +1,46 @@
+body{
+    color: darkslategray;
+    font-size: 17px;
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    font-size: 30px;
+    color: darkblue;
+}
+
+.text-center{
+    text-align: center;
+}
+
+h2{
+    font-size: 24px;
+    background-color: lightskyblue;
+    color: darkblue;
+}
+
+a{
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+h1 a{
+  color: white
+}
+
+h2 a{
+  color: lightblue
+}
+
+h1, h2, a:hover{
+  color: darkblue
+}
+
+#copyright{
+  font-weight: bold;
+  font-style: italic;
+}

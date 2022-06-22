@@ -1,0 +1,16 @@
+table{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    width: 20%;
+    text-align: center;
+    background-color: rgb(240,248,255);
+}
+th,td{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th, tr:hover{
+    background-color: rgb(168, 218, 213);
+}
+

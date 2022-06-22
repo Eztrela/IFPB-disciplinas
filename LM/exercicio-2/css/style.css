@@ -1,0 +1,98 @@
+body {
+  color: darkslategrey;
+  font-family: arial, sans-serif;
+  font-size: 17px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#copyright {
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1 {
+  font-size:30px;
+  font-family: 'Audiowide', cursive;
+}
+
+p, .material-icons{
+  line-height: 1.5rem;
+}
+
+.material-icons{
+  font-size: 1rem;
+}
+
+h2 {
+  font-size:24px;
+  background-color: lightskyblue;
+  border-radius: 5px;
+}
+
+h1, h2, a, a:visited {
+  color: darkblue;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1 a, h1 a:visited {
+  color: white;
+}
+h2 a, h2 a:visited {
+  color: lightskyblue;
+}
+h1:hover a, h2:hover a {
+  color: darkblue;
+}
+
+.btn{
+  font-size: 1.3rem;
+}
+
+.btn:hover{
+  text-decoration: none;
+  color: white;
+  background-color: darkblue;
+}
+
+#social{
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.fa-facebook-square{
+  color: navy;
+}
+
+.fa-twitter-square{
+  color: dodgerblue;
+}
+
+.fa-linkedin-square{
+  color: navy;
+}
+@media print{
+  body,h1{
+    color: black;
+    font-family: Times,serif;
+  }
+  #elon{
+    text-align: left;
+  }
+  h2{
+    background: unset;
+  }
+  h2 a, a.topo{
+    color: white;
+  }
+}
+
