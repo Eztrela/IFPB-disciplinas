@@ -92,14 +92,16 @@ def convertePosFixa(expressao:str)->str:
     pilha = pilhaEncadeada()
     out = ''
     for i in expressao:
-        print(pilha)
-        if(i not in '+-*/('):
+        if(i not in '+-*/()^'):
             out += f'{i}'
-        elif( i == ')'):
+        elif( i == '('):
+            pilha.empilha(i)
+        elif(i == ')'):
             while (pilha.topo() != '('):
-                out += f'{pilha.desempilha()}' 
+                out += f'{pilha.desempilha()}'
+            pilha.desempilha() 
         else:
-            while(prioridade(pilha.topo()) >= prioridade(i)):
+            while(not pilha.estaVazia() and prioridade(pilha.topo()) >= prioridade(i)):
                 out += f'{pilha.desempilha()}'
             pilha.empilha(i)
             
@@ -108,6 +110,6 @@ def convertePosFixa(expressao:str)->str:
         out += f'{pilha.desempilha()}'
     return out
 
-print(convertePosFixa('A+B*C/D-E'))
-
+print(convertePosFixa('A-(B^C^(D*E))'))
+# ABCD/*+E-
 

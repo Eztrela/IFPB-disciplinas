@@ -155,8 +155,4 @@ class pilhaEncadeada:
         return out
 
     def topo(self):
-        try:
-            assert not self.estaVazia()
-            return self.__topo.carga
-        except AssertionError:
-            raise PilhaException(f'A pilha está vazia')
+        return self.__topo.carga
