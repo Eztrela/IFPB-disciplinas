@@ -1,32 +1,62 @@
+import java.util.Arrays;
 
 public class AlunoFlex {
-	String nome;
-	double[] notas;
-	double media;
+	private String nome;
+	private double[] notas;
+	private String matricula;
 	
-	public AlunoFlex( String nome,double... notas) {
+	public AlunoFlex( String nome, String matricula, double... notas) {
 		this.nome = nome;
 		this.notas = notas;
-	}
-	
-	public double getMedia() {
-		double soma = 0;
-		for(double nota:notas) {
-			soma+=nota;
-		}
-		return soma/notas.length;
+		this.matricula = matricula;
 	}
 	
 	public String getNome() {
 		return nome;
 	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double[] getNotas() {
+		return notas;
+	}
+
+	public void setNotas(double[] notas) {
+		this.notas = notas;
+	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+
+
+	@Override
+	public String toString() {
+		return "AlunoFlex [nome=" + nome + ", notas=" + Arrays.toString(notas) + ", matricula="
+				+ matricula + "]";
+	}
+
+	public double calcularMedia() {
+		double soma = 0;
+		for(double nota:notas) {
+			soma+=nota;
+		}
+		return (int)Math.round(soma/notas.length);
+	}
 	
-	public String getSituacao() {
-		double media = getMedia();
-		if(media >= 7) {
+	
+	public String calcularSituacao() {
+		double media = calcularMedia();
+		if(media >= 70) {
 			return "aprovado";
 		}else {
-			if(media >= 5 && media < 7) {
+			if(media >= 50 ) {
 				return "final";
 			}else {
 				return "reprovado";
