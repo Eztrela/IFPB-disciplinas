@@ -1,12 +1,11 @@
 
 public class Venda {
-	String data;
-	Produto produto;
-	int quantidade;
-	double valor;
-	public Venda(String data, Produto produto, int quantidade) {
+	private String data;
+	private Produto produto;
+	private int quantidade;
+	private double valor;
+	public Venda(String data, int quantidade) {
 		this.data = data;
-		this.produto = produto;
 		this.quantidade = quantidade;
 		this.valor = calculaValor();
 		this.decrementaEstoque();
@@ -22,7 +21,7 @@ public class Venda {
 		return produto.getPreco() * quantidade;
 	}
 	
-	public void decrementaEstoque() {
+	public void decrementaEstoque(Produto produto) {
 		int estoqueAtualizado = produto.getEstoque() -  quantidade;
 		produto.setEstoque(estoqueAtualizado);
 	}
