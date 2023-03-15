@@ -15,7 +15,7 @@ public class Venda {
 	
 	@Override
 	public String toString() {
-		return "Venda [data=" + data + ", produto=" + produto + ", quantidade=" + quantidade + ", valor=" + valor + "]";
+		return "Venda [data=" + data + , valor=" + valor + "]";
 	}
 
 //	public double calculaValor() {
