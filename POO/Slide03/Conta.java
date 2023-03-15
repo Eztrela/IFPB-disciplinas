@@ -9,11 +9,6 @@ public class Conta {
 		this.cpf = cpf;
 		this.saldo = 0;
 	}
-	public Conta(String numero, String cpf, double saldo) {
-		this.numero = numero;
-		this.cpf = cpf;
-		this.saldo = saldo;
-	}
 	
 	public void creditar(double valor) {
 		saldo += valor;
@@ -37,7 +32,8 @@ public class Conta {
 	}
 	
 	public Conta clonar() {
-		Conta c2 = new Conta(numero, cpf, saldo);
+		Conta c2 = new Conta(numero, cpf);
+		c2.creditar(saldo);
 		return c2;
 	}
 
