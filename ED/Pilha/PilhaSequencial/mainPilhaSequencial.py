@@ -87,3 +87,6 @@ binario(10)
 binario(256)
 binario(511)
 binario(512)
+
+def binario(valor:int):
+    

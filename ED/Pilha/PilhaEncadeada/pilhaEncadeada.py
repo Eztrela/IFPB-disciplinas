@@ -62,7 +62,7 @@ class pilhaEncadeada:
             cursor.carga = valor
 
         except AssertionError:
-            raise PilhaException(f'Posicao inválida para a pilha atual com {len(self.__dados)} elementos')
+            raise PilhaException(f'Posicao inválida para a pilha atual com {self.tamanho} elementos')
     
     def empilha(self, valor:any):
         novo = no(valor)

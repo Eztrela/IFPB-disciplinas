@@ -39,7 +39,7 @@ print(pilha.desempilha())
 # print(f'Pilha depois: {pilha}')
 # pilha.empilha(33)
 #print(f'Pilha 2 : {pilha2}')
-print(f'')
+# print(f'')
 # CONCATENAÇÃO UNÁRIA
 #pilha.concatenar(pilha2)
 #print(f'Pilha : {pilha}')
