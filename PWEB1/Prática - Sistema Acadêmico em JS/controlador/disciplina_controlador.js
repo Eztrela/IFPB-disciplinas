@@ -12,19 +12,18 @@ class DisciplinaControlador {
     )
     const listaDisciplinasElemento = document.querySelector('#listaDisciplinas')
     if (disciplinaInserida) {
-      this.inserirNoHtml(disciplinaInserida, listaDisciplinasElemento)
+      this.inserirDisciplinaNoHtml(disciplinaInserida, listaDisciplinasElemento)
     }
   }
   remover(codigo) {
     const listaDisciplinasElemento = document.querySelector('#listaDisciplinas')
-    console.log(typeof (codigo))
     const disciplinaRemover = this.servico.remover(Number(codigo));
     if (disciplinaRemover) {
-      this.carregarNoHtml(listaDisciplinasElemento);
+      this.removerDisciplinaNoHtml(listaDisciplinasElemento);
     }
   }
 
-  inserirNoHtml(disciplina, elementoDestino) {
+  inserirDisciplinaNoHtml(disciplina, elementoDestino) {
     let codigo = disciplina.codigo;
     let nome = disciplina.nome;
     let alunos = disciplina.alunosMatriculados;
@@ -37,15 +36,9 @@ class DisciplinaControlador {
     elementoDestino.innerHTML += elementoDisciplina;
   }
 
-  carregarNoHtml(elementoDestino) {
-    // const disciplinaElemento = document.createElement('li')
-    // let disciplinaElemento = documento.querySelector('#disciplinaContainer')
-    // let disciplinaElemento = document.createElement('div')
-    // disciplinaElemento.innerHTML = `<div class="container" id="disciplinasContainer">
-    // </div>`;
+  removerDisciplinaNoHtml(elementoDestino) {
     elementoDestino.innerHTML = ''
     let disciplinas = this.servico.listar();
-    console.log(disciplinas.length)
     if (disciplinas.length > 0) {
       disciplinas.forEach(d => {
         let codigo = d.codigo;
@@ -60,12 +53,5 @@ class DisciplinaControlador {
         elementoDestino.innerHTML += elementoDisciplina;
       });
     }
-
-    // disciplinaElemento.textContent = `Código: ${disciplina.codigo} - Nome: ${disciplina.nome} `
-    // const botaoExcluir = document.createElement('button')
-    // botaoExcluir.textContent = 'X'
-    // disciplinaElemento.appendChild(botaoExcluir)
-    // botaoExcluir.addEventListener('click')
-    // elementoDestino.appendChild(disciplinaElemento)
   }
 }
