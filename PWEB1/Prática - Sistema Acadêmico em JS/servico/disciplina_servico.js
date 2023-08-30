@@ -14,13 +14,18 @@ class DisciplinaService {
   }
 
   pesquisarPorCodigo(codigo) {
-    return this.repositorio
-      .listar()
-      .filter(disciplina => disciplina.codigo === codigo)
+    return this.repositorio.listar().filter(disciplina => disciplina.codigo === codigo)
   }
 
   remover(codigo) {
-    this.repositorio.remover(codigo)
+    console.log(this.repositorio.listar())
+    const disciplinaPesquisada = this.pesquisarPorCodigo(codigo)
+    if (disciplinaPesquisada.length > 0) {
+      throw new Error('Disciplina não existe');
+    }
+    this.repositorio.remover(Number(codigo))
+    console.log(this.repositorio.listar())
+    return true;
   }
 
   inserirAlunoNaDisciplina(aluno, codigo) {
@@ -28,6 +33,10 @@ class DisciplinaService {
     if (disciplinaPesquisada.length < 0) {
       throw new Error('Disciplina não encontrada')
     }
-    disciplinaPesquisada[0].matricularAluno(aluno)
+    disciplinaPesquisada[0].alunosMatriculados.push(aluno)
+  }
+
+  listar() {
+    return this.repositorio.listar();
   }
 }

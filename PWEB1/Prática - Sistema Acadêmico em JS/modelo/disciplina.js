@@ -25,8 +25,4 @@ class Disciplina {
     get alunosMatriculados(){
         return this._alunosMatriculados;
     }
-
-    matricularAluno(aluno){
-        this._alunosMatriculados.push(aluno)
-    }
 }

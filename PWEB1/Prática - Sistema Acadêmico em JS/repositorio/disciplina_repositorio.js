@@ -9,7 +9,7 @@ class DisciplinaRepositorio {
     }
 
     remover(codigo) {
-        const indxDisciplinaARemover = this._disciplinas.findIndex(disciplina => disciplina.codigo === codigo);
+        const indxDisciplinaARemover = this._disciplinas.findIndex(disciplina => Number(disciplina.codigo) === codigo);
         if (indxDisciplinaARemover > -1) {
             this._disciplinas.splice(indxDisciplinaARemover, 1);
         }
@@ -19,8 +19,10 @@ class DisciplinaRepositorio {
         return this._disciplinas;
     }
 
-    atualizar(codigo,novoNome){
+    atualizar(codigo, novoNome) {
         const indxDisciplinaAAtualizar = this._disciplinas.findIndex(disciplina => disciplina.codigo === codigo);
-        this._disciplinas[indxDisciplinaAAtualizar].nome = novoNome;
+        if (indxDisciplinaAAtualizar > -1) {
+            this._disciplinas[indxDisciplinaAAtualizar].nome = novoNome;
+        }
     }
 }
