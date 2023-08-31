@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acadêmico - IFPB</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acadêmico - IFPB</title>
-</head>
+  <body>
+    Codigo:<input id="codigo" type="number" /><br />
+    Nome:<input id="nome" /><br />
 
-<body>
-  Codigo:<input id="codigo" type="number" /><br />
-  Nome:<input id="nome" /><br />
+    <button onclick="controladorDisciplina.inserir()">
+      Inserir Disciplina
+    </button>
 
-  <button onclick="controladorDisciplina.inserir()">Inserir Disciplina</button>
-  <div class="container" id="disciplinasContainer">
-
-  </div>
-
-  <ol id="listaDisciplinas"></ol>
-  <script src="modelo/disciplina.js"></script>
-  <script src="repositorio/disciplina_repositorio.js"></script>
-  <script src="servico/disciplina_servico.js"></script>
-  <script src="controlador/disciplina_controlador.js"></script>
-  <script src="script.js"></script>
-</body>
-
+    <ol id="listaDisciplinas"></ol>
+    <script src="controlador/aluno_controlador.js"></script>
+    <script src="modelo/aluno.js"></script>
+    <script src="repositorio/aluno_repositorio.js"></script>
+    <script src="servico/aluno_service.js"></script>
+    <script src="modelo/disciplina.js"></script>
+    <script src="repositorio/disciplina_repositorio.js"></script>
+    <script src="servico/disciplina_servico.js"></script>
+    <script src="controlador/disciplina_controlador.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,16 +1,18 @@
 class Aluno {
+  constructor(nome, idade, matricula) {
+    this._nome = nome
+    this.idade = idade
+    this.matricula = matricula
+  }
 
-    constructor(nome, idade, matricula) {
-        this._nome = nome;
-        this.idade = idade;
-        this.matricula = matricula;
-    }
+  get nome() {
+    return this._nome
+  }
 
-    get nome() {
-        return this._nome;
-    }
-
-    set nome(novoNome) {
-        this._nome = novoNome;
-    }
+  set nome(novoNome) {
+    this._nome = novoNome
+  }
+  toString() {
+    return `Aluno: ${this.nome} - Idade: ${this.idade} - matricula: ${this.matricula}`
+  }
 }

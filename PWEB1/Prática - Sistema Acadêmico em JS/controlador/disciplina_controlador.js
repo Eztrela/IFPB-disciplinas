@@ -7,7 +7,7 @@ class DisciplinaControlador {
     const codigoElemento = document.querySelector('#codigo')
     const nomeElemento = document.querySelector('#nome')
     const disciplinaInserida = this.servico.inserir(
-      codigoElemento.value,
+      Number(codigoElemento.value),
       nomeElemento.value
     )
     const listaDisciplinasElemento = document.querySelector('#listaDisciplinas')
@@ -16,42 +16,35 @@ class DisciplinaControlador {
     }
   }
   remover(codigo) {
-    const listaDisciplinasElemento = document.querySelector('#listaDisciplinas')
-    const disciplinaRemover = this.servico.remover(Number(codigo));
-    if (disciplinaRemover) {
-      this.removerDisciplinaNoHtml(listaDisciplinasElemento);
+    codigo = codigo.split('-')[1]
+    const disciplinaRemovida = this.servico.remover(Number(codigo))
+    if (disciplinaRemovida) {
+      this.removerDisciplinaDoHtml(codigo)
     }
   }
 
   inserirDisciplinaNoHtml(disciplina, elementoDestino) {
-    let codigo = disciplina.codigo;
-    let nome = disciplina.nome;
-    let alunos = disciplina.alunosMatriculados;
-    let elementoDisciplina = `<li id='${codigo}'>
-      <p>
-        Código: ${codigo} - Nome: ${nome} - Alunos: ${alunos}
-      </p>
-      <button id='${codigo}'onclick='controladorDisciplina.remover(this.id)'>X</button>
-      </li>`;
-    elementoDestino.innerHTML += elementoDisciplina;
+    const elementoDisciplina = document.createElement('li')
+    const codigo = disciplina.codigo
+    elementoDisciplina.setAttribute('id', `disciplina-${codigo}`)
+
+    const disciplinaText = document.createElement('p')
+    disciplinaText.textContent = `${disciplina}`
+    elementoDisciplina.appendChild(disciplinaText)
+
+    const disciplinaCloseButton = document.createElement('button')
+    disciplinaCloseButton.textContent = 'X'
+    disciplinaCloseButton.setAttribute('id', `remover-${codigo}`)
+    disciplinaCloseButton.addEventListener('click', click => {
+      const codigo = click.target.id
+      this.remover(codigo)
+    })
+    elementoDisciplina.appendChild(disciplinaCloseButton)
+    elementoDestino.appendChild(elementoDisciplina)
   }
 
-  removerDisciplinaNoHtml(elementoDestino) {
-    elementoDestino.innerHTML = ''
-    let disciplinas = this.servico.listar();
-    if (disciplinas.length > 0) {
-      disciplinas.forEach(d => {
-        let codigo = d.codigo;
-        let nome = d.nome;
-        let alunos = d.alunosMatriculados;
-        let elementoDisciplina = `<li id='${codigo}'>
-          <p>
-            Código: ${codigo} - Nome: ${nome} - Alunos: ${alunos}
-          </p>
-          <button id='${codigo}'onclick='controladorDisciplina.remover(this.id)'>X</button>
-          </li>`;
-        elementoDestino.innerHTML += elementoDisciplina;
-      });
-    }
+  removerDisciplinaDoHtml(codigo) {
+    const disciplinaARemover = document.querySelector(`#disciplina-${codigo}`)
+    disciplinaARemover.remove()
   }
 }

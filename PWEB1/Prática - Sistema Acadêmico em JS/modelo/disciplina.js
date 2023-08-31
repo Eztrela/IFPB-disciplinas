@@ -25,4 +25,8 @@ class Disciplina {
     get alunosMatriculados(){
         return this._alunosMatriculados;
     }
+
+    toString(){
+        return `Código: ${this.codigo} - Nome: ${this.nome} - Alunos: ${this.alunosMatriculados}`
+    }
 }
