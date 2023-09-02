@@ -1,15 +1,21 @@
-const c1 = new Conta('1', 100);
-const c2 = new Conta('2');
+const c1 = new Conta('1', 100)
+const c2 = new Conta('2')
 
-const contaController = new ContaController();
-contaController.adicionarConta(c1);
-contaController.adicionarConta(c2);
-contaController.listar();
+const contaController = new ContaController()
+contaController.adicionarConta(c1)
+contaController.adicionarConta(c2)
+contaController.listar()
 
-const contaBonificada = new ContaBonificada('10', 100);
-contaBonificada.creditar(10);
-console.log(contaBonificada.saldo);
+const contaBonificada = new ContaBonificada('10', 100)
+contaBonificada.creditar(10)
+console.log(contaBonificada.saldo)
 
+const poupanca = new Poupanca('10', 100, '21')
+console.log(poupanca.saldo)
+poupanca.juros('21')
+console.log(poupanca.saldo)
+poupanca.juros('21')
+console.log(poupanca.saldo)
 
 // const repContas = new RepositorioContas();
 //
