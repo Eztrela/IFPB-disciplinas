@@ -4,9 +4,9 @@ class Contas {
 
     constructor() {
         this.contas = new Array<Conta>();
-        const c1 = new Conta('1', 100);
-        const c2 = new Conta('2', 200);
-        this.contas.push(c1, c2);
+        // const c1 = new Conta('1', 100);
+        // const c2 = new Conta('2', 200);
+        // this.contas.push(c1, c2);
     }
 
     inserir(conta: Conta): void {

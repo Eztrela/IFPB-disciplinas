@@ -8,16 +8,19 @@ class ClienteController {
     }
     inserir(evento) {
         evento.preventDefault();
-        let novoCliente = new Cliente(this.inputNome.value, this.inputCpf.value, this.gerarNumConta().toString());
+        if (this.clientes.pesquisar(this.inputCpf.value)) {
+            throw new Error('Cliente já cadastrado');
+        }
+        let novoCliente = new Cliente(this.inputNome.value, this.inputCpf.value);
         this.clientes.inserir(novoCliente);
-        this.inserirContaNoHTML(novoCliente);
+        this.inserirClienteNoHTML(novoCliente);
     }
     listar() {
         this.clientes.listar().forEach(cliente => {
-            this.inserirContaNoHTML(cliente);
+            this.inserirClienteNoHTML(cliente);
         });
     }
-    inserirContaNoHTML(cliente) {
+    inserirClienteNoHTML(cliente) {
         const elementoP = document.createElement('p');
         elementoP.textContent = cliente.toString();
         const botaoApagar = document.createElement('button');
@@ -29,8 +32,5 @@ class ClienteController {
         });
         elementoP.appendChild(botaoApagar);
         document.body.appendChild(elementoP);
-    }
-    gerarNumConta() {
-        return this.clientes.listar().length + 1;
     }
 }

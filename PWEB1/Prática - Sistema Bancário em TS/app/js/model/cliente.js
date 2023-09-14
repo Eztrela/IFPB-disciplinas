@@ -1,8 +1,8 @@
 class Cliente {
-    constructor(nome, cpf, numeroConta) {
+    constructor(nome, cpf, conta = undefined) {
         this._nome = nome;
         this._cpf = cpf;
-        this._conta = new Conta(numeroConta);
+        this._conta = conta;
     }
     get nome() {
         return this._nome;
@@ -15,5 +15,12 @@ class Cliente {
     }
     get conta() {
         return this._conta;
+    }
+    set conta(novaConta) {
+        this._conta = novaConta;
+    }
+    toString() {
+        return `Nome: ${this._nome} 
+        - CPF: ${this._cpf}`;
     }
 }
