@@ -1,4 +1,3 @@
-
 public class Venda {
 	
 	private String data;

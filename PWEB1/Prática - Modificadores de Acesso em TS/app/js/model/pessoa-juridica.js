@@ -3,7 +3,7 @@ class PessoaJuridica extends Pessoa {
         super(nome + '-Jurídica', idade, dataNascimento);
         this._cnpj = cnpj;
     }
-    get cpf() {
+    get cnpj() {
         return this._cnpj;
     }
 }

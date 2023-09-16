@@ -16,6 +16,12 @@ class Pessoa {
     set idade(idade) {
         this._idade = idade;
     }
+    get dataNascimento() {
+        return this._dataNascimento;
+    }
+    set dataNascimento(dataNascimento) {
+        this._dataNascimento = dataNascimento;
+    }
     toString() {
         return `Nome: ${this._nome}
 Idade: ${this._idade}

@@ -1,13 +1,13 @@
-class PessoaFisica extends Pessoa{
+class PessoaFisica extends Pessoa {
 
-    readonly _cpf:string;
+    readonly _cpf: string;
 
-    constructor(nome: string, idade:number, dataNascimento: string, cpf:string) {
-        super(nome+'-Física',idade,dataNascimento);
+    constructor(nome: string, idade: number, dataNascimento: string, cpf: string) {
+        super(nome + '-Física', idade, dataNascimento);
         this._cpf = cpf;
     }
 
-    get cpf() {
+    get cpf(): string {
         return this._cpf;
     }
 }
