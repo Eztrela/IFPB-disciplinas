@@ -1,0 +1,44 @@
+.mat-card-insert {
+  max-width: 1000px;
+  background-color: lightsteelblue;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 0;
+}
+.mat-form-principal {
+  margin-left: 5px;
+}
+button {
+  background-color: darkcyan;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+mat-icon {
+  color: white;
+}
+
+mat-card-header {
+  margin-bottom: 20px;
+}
+
+mat-label::ng-deep {
+  color: darkcyan;
+}
+
+mat-card-title {
+  color: darkcyan;
+}
+
+.mat-card-simples {
+  max-width: 330px;
+  background-color: lightsteelblue;
+  margin: 10px 0px 0px 0px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 700px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
