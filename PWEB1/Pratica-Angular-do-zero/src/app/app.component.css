@@ -1,0 +1,62 @@
+app-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mat-card-insert {
+  background-color: lightsteelblue;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 0;
+}
+.mat-form-principal {
+  margin-left: 5px;
+}
+button {
+  background-color: darkcyan;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  flex-basis: 10%;
+}
+
+mat-icon {
+  color: white;
+}
+
+mat-card-header {
+  margin-bottom: 20px;
+}
+
+mat-label::ng-deep {
+  color: darkcyan;
+}
+
+mat-card-title {
+  color: darkcyan;
+}
+
+.mat-card-simples {
+  width: 330px;
+  background-color: lightsteelblue;
+  margin: 10px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-buttons {
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+}

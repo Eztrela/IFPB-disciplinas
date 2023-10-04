@@ -16,27 +16,44 @@ export class Livro{
 		return this._isbn;
 	}
 
-    get titulo(): string {
+  set isbn(value: string) {
+		this._isbn = value;
+	}
+
+  get titulo(): string {
 		return this._titulo;
 	}
 
-    get autores(): Array<string> {
+
+  set titulo(novoTitulo: string) {
+		this._titulo = novoTitulo;
+	}
+
+
+  get autores(): Array<string> {
 		return this._autores;
 	}
 
-    get disponibilidade(): boolean {
+
+  set autores(value: string) {
+    console.log(value.split(','))
+    this._autores = value.split(',');
+	}
+
+
+  get disponibilidade(): boolean {
 		return this._disponibilidade;
 	}
 
-    set disponibilidade(disponibilidade: boolean) {
+  set disponibilidade(disponibilidade: boolean) {
 		this._disponibilidade = disponibilidade;
 	}
 
-    get edicao(): number {
+  get edicao(): number {
 		return this._edicao;
 	}
 
-    set edicao(value: number) {
+  set edicao(value: number) {
 		this._edicao = value;
 	}
 

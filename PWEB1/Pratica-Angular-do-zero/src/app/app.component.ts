@@ -12,6 +12,7 @@ export class AppComponent {
   livroAtual: Livro;
   mensagemErro = '';
   pesquisaLivros: Array<Livro> = [];
+  editing = false;
 
   constructor(){
     this.livroAtual = new Livro('','',0) 
@@ -35,8 +36,9 @@ export class AppComponent {
   }
 
   pesquisar (corteTitulo: string){
+    this.pesquisaLivros = [];
     if(corteTitulo.length == 0){
-      this.pesquisaLivros = [];
+      return
     }
     this.livros.forEach(livro => {
       if (livro.titulo.startsWith(corteTitulo)){
@@ -57,5 +59,20 @@ export class AppComponent {
   livroJaCadastrado(isbn: string){
     const livrosRetornados = this.livros.filter(livro => livro.isbn === isbn);
     return livrosRetornados.length > 0;
+  }
+
+  isToEdit(livro:Livro){
+    this.livroAtual = livro;
+    this.editing = true
+    
+  }
+
+  edit(livro: Livro){
+    const indxAEditar = this.buscaLivro(livro.titulo);
+    if(indxAEditar >= 0){
+      this.livros[indxAEditar] = livro;
+      this.livroAtual = new Livro('','',0);
+    }
+    this.editing = false
   }
 }
