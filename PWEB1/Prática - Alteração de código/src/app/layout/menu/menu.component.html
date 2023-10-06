@@ -1,0 +1,13 @@
+<div class="menu">
+  <button color="sucesso" mat-raised-button [matMenuTriggerFor]="menuUsuario">Usuario</button>
+  <mat-menu #menuUsuario="matMenu">
+    <button [routerLink]="['cadastrousuario']" mat-menu-item>Cadastrar usuário</button>
+    <button [routerLink]="['listagemusuarios']" mat-menu-item>Listar Usuários</button>
+  </mat-menu>
+  <button color="sucesso" mat-raised-button [matMenuTriggerFor]="menuLivro">Livro</button>
+  <mat-menu #menuLivro="matMenu">
+    <button [routerLink]="['cadastrolivro']" mat-menu-item>Cadastrar Livro</button>
+    <button [routerLink]="['listagemlivros']" mat-menu-item>Listar Livros</button>
+    <button [routerLink]="['editalivro/:id']" mat-menu-item>Update Livros</button>
+  </mat-menu>
+</div>

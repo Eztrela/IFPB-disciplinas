@@ -1,0 +1,17 @@
+<mat-card class="card-cadastro">
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <input matInput [(ngModel)]="livroDeManutencao.titulo" placeholder="Digite o Titulo">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <input matInput [(ngModel)]="livroDeManutencao.edicao" placeholder="Digite a Edição">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input matInput [(ngModel)]="livroDeManutencao.isbn" placeholder="Digite o ISBN">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="manter()">{{nomeBotaoManutencao}}</button>
+    </mat-card-actions>
+  </mat-card>
